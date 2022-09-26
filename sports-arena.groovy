@@ -21,7 +21,6 @@ pipeline{
                 sh 'sudo chmod 777 /var/run/docker.sock'
                 sh 'cd /home/ec2-user/jenkins/workspace/Sports_Arena_Pipeline'
                 sh 'sudo docker-compose down --rmi all'
-
             }
         }
         stage('Deploying Containers'){
