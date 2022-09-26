@@ -4,6 +4,10 @@
   become: yes
   remote_user: root
   tasks:
+    - name: Installing Java
+      yum:
+         name: java
+         state: latest
     - name: Download Long Term Jenkins release
       get_url:
         url: https://pkg.jenkins.io/redhat-stable/jenkins.repo
