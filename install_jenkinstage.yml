@@ -1,0 +1,22 @@
+---
+- name: Setting Up jenkins Agent
+  hosts: jenkinsagent1
+  tasks:
+    - name: Installing git
+      yum:
+        name: git
+        state: latest
+    - name: Inatalling Java
+      yum:
+        name: java
+        state: latest
+    - name: Installing Docker
+      yum:
+        name: docker
+        state: latest
+    - name: Cpoying sh file
+      copy:
+        src: /root/jenkins/dockcompose.sh
+        dest: /root/
+    - name: Execute sh file
+      shell: sh /root/dockcompose.sh

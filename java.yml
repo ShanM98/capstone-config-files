@@ -1,0 +1,12 @@
+---
+- name: Install Java
+  hosts: jenkins
+  tasks:
+    - name: Update Repo
+      yum:
+        name: '*'
+        state: latest
+    - name: Installing Java
+      yum:
+        name: java
+        state: latest
